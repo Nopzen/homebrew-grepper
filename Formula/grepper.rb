@@ -7,6 +7,7 @@ class Grepper < Formula
   depends_on "crystal" => :build
 
   def install
-    system "crystal", "build", "src/main.cr" # if this fails, try separate make/make install steps
+    system "crystal build src/main.cr -o grepper"
+    bin.install "grepper"
   end
 end
